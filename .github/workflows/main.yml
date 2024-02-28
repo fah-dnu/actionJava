@@ -17,20 +17,21 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
 
-    - name: Compilar y Empaquetar con Maven
-      run: mvn -B package --file App.class
-
-    - name: Subir archivos compilados
-      uses: actions/upload-artifact@v2
+    - name: Release
+      uses: mg-smartrent/github-actions-maven-release@v2.6
       with:
-        name: compiled-files
-        path: bin/*.class  
+          release-branch-name: "master"
+          git-release-bot-name: "ReleaseBot"
+          git-release-bot-email: "release.bot@smartrent.com"
+          access-token: ${GITHUB_TOKEN}
 
-    - name: Desplegar en GitHub Releases
-      uses: actions/upload-release-asset@v1
-      with:
-        upload_url: ${{ github.event.release.upload_url }}
-        asset_path: bin/*.class  
-        asset_name: my-app.class  
-        asset_content_type: application/java-archive
-        token: ${{ secrets.GITHUB_TOKEN }}
+          # Release
+          maven-repo-server-id: ${MAVEN_SERVER_ID}
+          maven-repo-server-username: ${GITHUB_USERNAME}
+          maven-repo-server-password: ${GITHUB_TOKEN}
+          maven-release-args: "-Dskip.unit.tests=true -Dskip.integration.tests=true"
+
+          # Publish artifacts to GitHub Packages
+          maven-publish-args: "-Dskip.unit.tests=true -Dskip.integration.tests=true"
+          maven-release-publish: "true"
+          maven-snapshot-publish: "true"
