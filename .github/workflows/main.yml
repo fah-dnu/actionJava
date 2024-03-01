@@ -25,7 +25,7 @@ jobs:
             architecture: 'x64' # defaults to 'x64'
             
       - name: Ejecutar app      
-        run: java -cp java App
+        run: java -cp java holaMundo
       
       - name: Subir artefacto
         uses: actions/upload-artifact@v4
