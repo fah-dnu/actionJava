@@ -5,23 +5,27 @@ on:
     branches: [master]
 
 jobs:
-  build:
+  Construir-Acrtefacto:
     runs-on: ubuntu-latest
     
     steps:
       - name: Crear directorio virtual
-      - run: mkdir downloads
+        run: mkdir downloads
       
+      - name: Ver repositorio
+        uses: actions/checkout@v4
+
       - name: Interpretar Java
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+        uses: actions/setup-java@v4
         with:
             distribution: 'temurin' # See 'Supported distributions' for available options
             java-version: '21'
-      - run: java App.java
+      
+      - name: Correer Java
+        run: java App.java
       
       - name: Subir artefacto
-      - uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
-          name: my-artifact
-          path: downloads/
+            name: my-artifact
+            path: downloads/
