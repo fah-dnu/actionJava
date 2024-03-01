@@ -22,7 +22,7 @@ jobs:
             java-version: '21'
       
       - name: Correer Java
-        run: java App.class
+        run: java bin/App.class
       
       - name: Subir artefacto
         uses: actions/upload-artifact@v4
