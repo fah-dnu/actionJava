@@ -19,7 +19,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Navigate to Java source directory
-        run: cd src
+        run: cd src/App.java
 
       - name: List files in directory
         run: ls
