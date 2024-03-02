@@ -20,7 +20,9 @@ jobs:
 
       - name: Compilar Manual
         run: 
-            ls -R
+            ls -R 
+            echo 'fin de ls'
+            pwd
           # mkdir downloads
           # cd src
           # javac App.java
