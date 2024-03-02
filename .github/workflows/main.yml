@@ -18,14 +18,11 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Navigate to Java source directory
-        run: cd /bin
 
-      - name: List files in directory
-        run: ls
 
       - name: Compile Java
-        run: javac App.java
+      - run: cd /bin
+      - run: javac App.java
       
       - name: Subir artefacto
         uses: actions/upload-artifact@v4
