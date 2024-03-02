@@ -21,6 +21,9 @@ jobs:
       - name: Navigate to Java source directory
         run: cd src
 
+      - name: List files in directory
+        run: ls
+
       - name: Compile Java
         run: javac App.java
       
