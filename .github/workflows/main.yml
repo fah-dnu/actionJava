@@ -18,8 +18,8 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Build with Gradle
-        run: ./gradlew build
+      - name: Compile Java
+        run: javac App.java
       
       - name: Subir artefacto
         uses: actions/upload-artifact@v4
