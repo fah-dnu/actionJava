@@ -28,6 +28,7 @@ jobs:
         run: |
           cd src
           javac App.java
+          cd downloads
       
       - name: Subir artefacto
         uses: actions/upload-artifact@v4
