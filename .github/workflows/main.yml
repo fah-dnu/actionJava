@@ -12,9 +12,6 @@ jobs:
       - name: Crear carpeta
         run: mkdir downloads
         
-      - name: Ir a downloads
-        run: cd downloads
-        
       - name: Checkout Repository
         uses: actions/checkout@v2
         
@@ -28,8 +25,8 @@ jobs:
         run: |
           cd src
           javac App.java
-          cd downloads
-      
+          cp * downloads
+        
       - name: Subir artefacto
         uses: actions/upload-artifact@v4
         with:
