@@ -20,13 +20,10 @@ jobs:
 
       - name: Compilar Manual
         run: |
-            ls -R 
-            echo 'fin de ls'
-            pwd
-        # mkdir downloads
-          # cd src
-          # javac App.java
-          # cp -r . downloads
+            mkdir downloads
+            cd src
+            javac App.java
+            cp -r . downloads
         
       - name: Subir artefacto
         uses: actions/upload-artifact@v4
