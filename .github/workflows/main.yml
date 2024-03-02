@@ -19,11 +19,11 @@ jobs:
           distribution: 'temurin'
 
       - name: Compilar Manual
-        run: 
+        run: |
             ls -R 
             echo 'fin de ls'
             pwd
-          # mkdir downloads
+        # mkdir downloads
           # cd src
           # javac App.java
           # cp -r . downloads
