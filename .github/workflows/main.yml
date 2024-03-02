@@ -18,6 +18,9 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
+      - name: Navigate to Java source directory
+        run: cd /src/App.java
+
       - name: Compile Java
         run: javac App.java
       
