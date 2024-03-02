@@ -19,11 +19,12 @@ jobs:
           distribution: 'temurin'
 
       - name: Compilar Manual
-        run: |
-          mkdir downloads
-          cd src
-          javac App.java
-          cp -r . downloads
+        run: 
+            ls -R
+          # mkdir downloads
+          # cd src
+          # javac App.java
+          # cp -r . downloads
         
       - name: Subir artefacto
         uses: actions/upload-artifact@v4
