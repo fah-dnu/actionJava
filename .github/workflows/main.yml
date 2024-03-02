@@ -12,17 +12,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Ir al directorio
+        run: cd /src/
+
       - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
           java-version: '21'
           distribution: 'temurin'
 
-
-
       - name: Compile Java
-      - run: cd /bin
-      - run: javac App.java
+        run: javac App.java
       
       - name: Subir artefacto
         uses: actions/upload-artifact@v4
