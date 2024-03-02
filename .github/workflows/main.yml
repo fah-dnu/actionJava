@@ -23,7 +23,7 @@ jobs:
           cd src
           javac App.java
           mkdir downloads
-          cp * downloads
+          cp * -r downloads
         
       - name: Subir artefacto
         uses: actions/upload-artifact@v4
