@@ -24,8 +24,8 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Compilar con Maven
-        run: mvn clean install 
+      - name: Compilar con Gradle
+        run: ./gradlew build
       
       - name: Subir artefacto
         uses: actions/upload-artifact@v4
