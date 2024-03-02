@@ -25,7 +25,9 @@ jobs:
           distribution: 'temurin'
 
       - name: Compilar Manual
-        run: javac App.java
+        run: |
+          cd src
+          javac App.java
       
       - name: Subir artefacto
         uses: actions/upload-artifact@v4
