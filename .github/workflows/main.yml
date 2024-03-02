@@ -24,8 +24,8 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Compilar con Gradle
-        run: ./gradlew build
+      - name: Compilar con Ant
+        run: ant compile
       
       - name: Subir artefacto
         uses: actions/upload-artifact@v4
